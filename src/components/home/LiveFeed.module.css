@@ -1,0 +1,85 @@
+.container {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.liveIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.liveDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.liveText {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.feed {
+  max-height: 340px;
+  overflow-y: auto;
+  padding: var(--space-sm) 0;
+}
+
+.event {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-left: 3px solid transparent;
+  transition: background var(--duration-fast) var(--ease-out);
+  animation: feedSlideIn var(--duration-slow) var(--ease-spring) both;
+}
+
+.event:hover {
+  background: var(--glass-bg-hover);
+}
+
+.eventIcon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.eventText {
+  flex: 1;
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.eventTime {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.empty {
+  padding: var(--space-2xl);
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
+}
