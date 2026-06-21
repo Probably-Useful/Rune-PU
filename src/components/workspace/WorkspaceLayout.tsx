@@ -47,7 +47,7 @@ export default function WorkspaceLayout({
   const [decryptedTabs, setDecryptedTabs] = useState<DecryptedTab[]>(() => {
     const defaultTab: DecryptedTab = {
       id: "dashboard",
-      title: "Dashboard",
+      title: "Sanctum",
       decryptedContent: "",
       isDefault: true,
       folderId: null,
@@ -83,7 +83,7 @@ export default function WorkspaceLayout({
       const decryptedList: DecryptedTab[] = [
         {
           id: "dashboard",
-          title: "Dashboard",
+          title: "Sanctum",
           decryptedContent: "",
           isDefault: true,
           folderId: null,
@@ -229,7 +229,9 @@ export default function WorkspaceLayout({
 
     const updated = decryptedTabs.map((t) => {
       if (t.id === activeTabId) {
-        return { ...t, decryptedContent: newJson, title: newTitle || "Untitled Page" };
+        // If newTitle is empty, it's a content-only update — keep existing title
+        const resolvedTitle = newTitle || t.title || "Untitled Page";
+        return { ...t, decryptedContent: newJson, title: resolvedTitle };
       }
       return t;
     });

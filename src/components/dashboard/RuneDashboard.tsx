@@ -89,7 +89,7 @@ export default function RuneDashboard({
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>🔮 Rune Dashboard</h1>
+        <h1 className={styles.title}>🔮 Sanctum</h1>
         <p className={styles.subtitle}>
           Private insights and connections generated locally in your browser.
         </p>

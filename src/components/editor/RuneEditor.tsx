@@ -123,7 +123,8 @@ export default function RuneEditor({
     content: content ? JSON.parse(content) : { type: "doc", content: [] },
     onUpdate: ({ editor }) => {
       const json = JSON.stringify(editor.getJSON());
-      onSave(json, pageTitle);
+      // Only send content changes here — title is handled separately by handleTitleChange
+      onSave(json, "");
 
       // Slash command trigger detection
       const { selection } = editor.state;
